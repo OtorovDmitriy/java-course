@@ -3,12 +3,20 @@ package com.java.course;
 public class Main {
 
     public static void main(String[] args) {
-        Map<String, Integer> map = new Map<>();
-        map.put("hello", 1);
-        map.put("world", 2);
-        System.out.println(map.get("hello"));
-        System.out.println(map.remove("hello"));
-        System.out.println(map.contains("world"));
-        System.out.println(map.size());
+        CountMap<Integer> map_first = new CountMap<>();
+        CountMap<Integer> map_second = new CountMap<>();
+        map_first.add(1);
+        map_first.add(2);
+        map_second.add(3);
+        map_second.add(5);
+        map_second.add(5);
+
+        System.out.println(map_first.size());
+        map_first.addAll(map_second);
+        System.out.println(map_first.size());
+
+        System.out.println(map_first);
+
+        // System.out.println((map_first.getCount(1)));
     }
 }
