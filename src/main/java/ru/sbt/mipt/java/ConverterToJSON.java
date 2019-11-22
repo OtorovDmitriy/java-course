@@ -6,7 +6,7 @@ import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class ConverterToJSON implements Converter {
+public class ConverterToJSON implements ConverterStrategy {
 
     @Override
     public String serialize(Object o) throws IllegalAccessException {

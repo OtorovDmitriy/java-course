@@ -6,11 +6,13 @@ public class Main {
         String[] phoneNumbers = {"923-12-12", "253-32-62"};
         Person person = new Person("Lisa", "Brons", phoneNumbers, "Moscow", "357-861");
 
-        ConverterToJSON converterToJSON = new ConverterToJSON();
-        String jsonResult = converterToJSON.serialize(person);
+        Converter converter = new Converter();
 
-        ConverterToXML converterToXML = new ConverterToXML();
-        String xmlResult = converterToXML.serialize(person);
+        converter.converterStrategy = new ConverterToJSON();
+        String jsonResult = converter.addConverterStrategy(person);
+
+        converter.converterStrategy = new ConverterToXML();
+        String xmlResult = converter.addConverterStrategy(person);
 
         System.out.println(jsonResult);
         System.out.println(xmlResult);

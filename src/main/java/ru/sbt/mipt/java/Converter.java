@@ -1,5 +1,9 @@
 package ru.sbt.mipt.java;
 
-public interface Converter {
-    String serialize(Object o) throws IllegalAccessException;
+class Converter {
+    ConverterStrategy converterStrategy;
+
+    String addConverterStrategy(Object o) throws IllegalAccessException {
+        return this.converterStrategy.serialize(o);
+    }
 }

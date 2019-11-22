@@ -3,7 +3,7 @@ package ru.sbt.mipt.java;
 import org.json.JSONObject;
 import org.json.XML;
 
-public class ConverterToXML implements Converter {
+public class ConverterToXML implements ConverterStrategy {
 
     @Override
     public String serialize(Object o) throws IllegalAccessException {
