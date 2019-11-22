@@ -6,11 +6,7 @@ import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class ConverterToJSON extends Converter {
-
-    ConverterToJSON(Person person) {
-        super(person);
-    }
+public class ConverterToJSON implements Converter {
 
     @Override
     public String serialize(Object o) throws IllegalAccessException {

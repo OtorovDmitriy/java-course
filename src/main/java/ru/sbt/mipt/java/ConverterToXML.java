@@ -1,13 +1,16 @@
 package ru.sbt.mipt.java;
 
-public class ConverterToXML extends Converter {
+import org.json.JSONObject;
+import org.json.XML;
 
-    public ConverterToXML(Person person) {
-        super(person);
-    }
+public class ConverterToXML implements Converter {
 
     @Override
-    public String serialize(Object o) {
-        return null;
+    public String serialize(Object o) throws IllegalAccessException {
+        String className = o.getClass().getSimpleName();
+        String jsonString = new ConverterToJSON().serialize(o);
+        JSONObject jsonObject = new JSONObject(jsonString);
+        String xmlString = XML.toString(jsonObject);
+        return String.format("<%s>%s</%s>", className, xmlString, className);
     }
 }
