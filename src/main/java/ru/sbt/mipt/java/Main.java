@@ -1,4 +1,4 @@
-package com.java.course;
+package ru.sbt.mipt.java;
 
 public class Main {
 
